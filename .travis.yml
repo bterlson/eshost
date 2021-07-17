@@ -15,6 +15,7 @@ env:
   # Shells
   # - ESHOST_TARGET=ch
   - ESHOST_TARGET=engine262
+  - ESHOST_TARGET=jsc
   - ESHOST_TARGET=jsshell
   - ESHOST_TARGET=node
   - ESHOST_TARGET=qjs
@@ -59,6 +60,8 @@ install: |
       unset ESHOST_SKIP_QJS;
     elif [[ "$ESHOST_TARGET" == "graaljs" ]]; then
       unset ESHOST_SKIP_GRAALJS;
+    elif [[ "$ESHOST_TARGET" == "jsc" ]]; then
+      unset ESHOST_SKIP_JSC;
     elif [[ "$ESHOST_TARGET" == "jsshell" ]]; then
       unset ESHOST_SKIP_JSSHELL;
     elif [[ "$ESHOST_TARGET" == "hermes" ]]; then
